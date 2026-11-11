@@ -183,8 +183,9 @@ attenu comparison.
 ### Divergences (individually, with graph facts)
 
 - **B0 vs SubGrant — D5 (×8):** every fan-out recombination (e.g. case-0027: a
-  parent with cap `spend_usd=100` and two children at 60 each, each individually
-  valid) is invisible to B0's per-edge checker; SubGrant flags D5 on the parent.
+  parent with cap `api_calls=100` and four children at 30 each — 4 × 30 = 120 >
+  100 — each individually valid) is invisible to B0's per-edge checker; SubGrant
+  flags D5 on the parent.
 - **B0 vs SubGrant — D7 (×6):** e.g. case-0043 routes `data.delete` to a T2
   holder via a non-root issuer; B0 has no tier logic and accepts it.
 - **B0 vs SubGrant — D2 (×5):** case-0009/0010/0012/0013/0014 breach a root

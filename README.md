@@ -217,6 +217,7 @@ subgrant/             core verifier (graph, patterns, checks, report, cli, sarif
 subgrant/normalizers/ ucan, rfc8693, attenu, descriptor → dgraph/1
 subgrant/baselines.py B0 naive + B2 UCAN-spec baseline checkers
 packs/                pinned policy pack (delegation-policy-v1)
+schema/               dgraph/1 JSON Schema (machine-readable format definition)
 bench/                generators + scorers; bench/dev/, bench/dev_ext/
 fixtures/attenu/      vendored attenu-guard interop vectors + PROVENANCE.md
 audit/                framework descriptors + frameworks.md

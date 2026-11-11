@@ -135,3 +135,23 @@ wrapper), so they cover the uncommitted `hf-staging/` tree as well.
 
 Nothing is published; no remote exists; publication awaits the owner's final
 confirmation of exact texts and targets.
+
+## 8. Corrections (post-audit)
+
+An independent audit of the initial export commit
+(`791d80fd4e29631feed8a5dd3b1122f4ff22da8a`) found two small defects, fixed in a
+second export commit (`SubGrant: export corrections — dgraph/1 JSON Schema,
+case-0027 erratum`). Both are export-copy only; the dev repo is unchanged.
+
+- **Fix 1 — added `schema/dgraph-1.json`.** The machine-readable `dgraph/1` JSON
+  Schema was missing from the export inventory. It is now copied byte-identically
+  from the dev repo (sha256
+  `e746e96e16060faf019c00142fd0e0214dced0e0f9eeb35d28b2d07bd4249b6f`), and the
+  `README.md` §8 Layout block lists it.
+- **Fix 2 — case-0027 erratum in `reports/phase2.md` §4.** The B0-vs-SubGrant D5
+  illustration described case-0027 as "`spend_usd=100` and two children at 60";
+  the actual case is `api_calls=100` with four children at 30 (4 × 30 = 120 >
+  100). Corrected to match the case in `bench/dev/cases.jsonl` (the `README.md`
+  worked example and the Space demo were already correct).
+
+`python -m pytest` still reports **128 passed** after the corrections.

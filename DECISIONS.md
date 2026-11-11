@@ -208,3 +208,10 @@ Static Space demo are prepared under `hf-staging/`, which is listed in
 `.gitignore` and **not committed**. Nothing is uploaded by the preparation
 session; upload happens only at publication, after the owner's final
 confirmation of the exact texts and targets.
+
+## D-024 · Export corrections after independent audit
+Added `schema/dgraph-1.json` (byte-identical to the dev repo; it was missing
+from the export inventory) and corrected the case-0027 illustration in
+`reports/phase2.md` §4 to match the actual case (`api_calls=100`, four children
+at 30). Both changes are export-copy only; the dev repo is unchanged as the
+historical record.
