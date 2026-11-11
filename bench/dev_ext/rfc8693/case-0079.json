@@ -1,0 +1,12 @@
+{
+  "act": {
+    "act": null,
+    "scope": "data.read report.generate",
+    "sub": "n2"
+  },
+  "exp": 1782777600,
+  "iat": 1767225600,
+  "iss": "n0",
+  "scope": "data.read report.generate",
+  "sub": "n1"
+}

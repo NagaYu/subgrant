@@ -1,0 +1,40 @@
+{
+  "chain": [
+    {
+      "att": [
+        {
+          "can": "index.update",
+          "with": "files/reports/*"
+        },
+        {
+          "can": "report.generate",
+          "with": "files/reports/*"
+        }
+      ],
+      "aud": "n1",
+      "exp": 1782777600,
+      "iss": "n0",
+      "nbf": 1767225600,
+      "prf": []
+    },
+    {
+      "att": [
+        {
+          "can": "index.update",
+          "with": "files/reports/*"
+        },
+        {
+          "can": "report.generate",
+          "with": "files/reports/*"
+        }
+      ],
+      "aud": "n2",
+      "exp": null,
+      "iss": "n1",
+      "nbf": 1767225600,
+      "prf": [
+        0
+      ]
+    }
+  ]
+}

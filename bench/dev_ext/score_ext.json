@@ -1,0 +1,26 @@
+{
+  "all_pass": true,
+  "inexpressible": {
+    "descriptor": 13,
+    "rfc8693": 16,
+    "ucan": 11
+  },
+  "mismatches": [],
+  "per_format": {
+    "descriptor": {
+      "expressible": 11,
+      "failed": 0,
+      "passed": 11
+    },
+    "rfc8693": {
+      "expressible": 8,
+      "failed": 0,
+      "passed": 8
+    },
+    "ucan": {
+      "expressible": 13,
+      "failed": 0,
+      "passed": 13
+    }
+  }
+}

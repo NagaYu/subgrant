@@ -1,0 +1,581 @@
+{
+  "cases": [
+    {
+      "case_id": "case-0001",
+      "class": "D1",
+      "expected": [
+        {
+          "class": "D1",
+          "edge": "e2"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0001.json"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [] != expected [('D1', 'e2')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [] != expected [('D1', 'e2')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0002",
+      "class": "D1",
+      "expected": [
+        {
+          "class": "D1",
+          "edge": "e2"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0002.json"
+        },
+        "rfc8693": {
+          "expressible": true,
+          "path": "rfc8693/case-0002.json"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0002.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0009",
+      "class": "D2",
+      "expected": [
+        {
+          "class": "D2",
+          "edge": "e5"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: normalized findings [] != expected [('D2', 'e5')] (dimension not carried by descriptor)"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [] != expected [('D2', 'e5')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [] != expected [('D2', 'e5')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0010",
+      "class": "D2",
+      "expected": [
+        {
+          "class": "D2",
+          "edge": "e6"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: normalized findings [] != expected [('D2', 'e6')] (dimension not carried by descriptor)"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [] != expected [('D2', 'e6')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [] != expected [('D2', 'e6')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0015",
+      "class": "D3",
+      "expected": [
+        {
+          "class": "D3",
+          "edge": "e2"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: normalized findings [] != expected [('D3', 'e2')] (dimension not carried by descriptor)"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [] != expected [('D3', 'e2')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [] != expected [('D3', 'e2')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0016",
+      "class": "D3",
+      "expected": [
+        {
+          "class": "D3",
+          "edge": "e3"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: normalized findings [] != expected [('D3', 'e3')] (dimension not carried by descriptor)"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [] != expected [('D3', 'e3')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [] != expected [('D3', 'e3')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0021",
+      "class": "D4",
+      "expected": [
+        {
+          "class": "D4",
+          "edge": "e2"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: normalized findings [] != expected [('D4', 'e2')] (dimension not carried by descriptor)"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [] != expected [('D4', 'e2')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0021.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0022",
+      "class": "D4",
+      "expected": [
+        {
+          "class": "D4",
+          "edge": "e2"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: normalized findings [] != expected [('D4', 'e2')] (dimension not carried by descriptor)"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [] != expected [('D4', 'e2')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0022.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0027",
+      "class": "D5",
+      "expected": [
+        {
+          "class": "D5",
+          "edge": "e1"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: fan-out graph is inexpressible as a linear descriptor chain"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: fan-out graph is inexpressible as a linear rfc8693 chain"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [] != expected [('D5', 'e1')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0028",
+      "class": "D5",
+      "expected": [
+        {
+          "class": "D5",
+          "edge": "e2"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: fan-out graph is inexpressible as a linear descriptor chain"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: fan-out graph is inexpressible as a linear rfc8693 chain"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [] != expected [('D5', 'e2')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0035",
+      "class": "D6",
+      "expected": [
+        {
+          "class": "D6",
+          "edge": "e2"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0035.json"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [] != expected [('D6', 'e2')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [] != expected [('D6', 'e2')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0036",
+      "class": "D6",
+      "expected": [
+        {
+          "class": "D6",
+          "edge": "e3"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0036.json"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [] != expected [('D6', 'e3')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [] != expected [('D6', 'e3')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0043",
+      "class": "D7",
+      "expected": [
+        {
+          "class": "D7",
+          "edge": "e2"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: normalized findings [] != expected [('D7', 'e2')] (dimension not carried by descriptor)"
+        },
+        "rfc8693": {
+          "expressible": true,
+          "path": "rfc8693/case-0043.json"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0043.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0044",
+      "class": "D7",
+      "expected": [
+        {
+          "class": "D7",
+          "edge": "e3"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0044.json"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [('D7', 'e2'), ('D7', 'e3')] != expected [('D7', 'e3')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [('D7', 'e2'), ('D7', 'e3')] != expected [('D7', 'e3')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0049",
+      "class": "D8",
+      "expected": [
+        {
+          "class": "D8",
+          "edge": "e2"
+        }
+      ],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: normalized findings [] != expected [('D8', 'e2')] (dimension not carried by descriptor)"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: normalized findings [] != expected [('D8', 'e2')] (dimension not carried by rfc8693)"
+        },
+        "ucan": {
+          "expressible": false,
+          "reason": "ucan: normalized findings [] != expected [('D8', 'e2')] (dimension not carried by ucan)"
+        }
+      }
+    },
+    {
+      "case_id": "case-0053",
+      "class": "clean",
+      "expected": [],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0053.json"
+        },
+        "rfc8693": {
+          "expressible": true,
+          "path": "rfc8693/case-0053.json"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0053.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0054",
+      "class": "clean",
+      "expected": [],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0054.json"
+        },
+        "rfc8693": {
+          "expressible": true,
+          "path": "rfc8693/case-0054.json"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0054.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0063",
+      "class": "clean",
+      "expected": [],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0063.json"
+        },
+        "rfc8693": {
+          "expressible": true,
+          "path": "rfc8693/case-0063.json"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0063.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0064",
+      "class": "clean",
+      "expected": [],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0064.json"
+        },
+        "rfc8693": {
+          "expressible": true,
+          "path": "rfc8693/case-0064.json"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0064.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0071",
+      "class": "clean",
+      "expected": [],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: fan-out graph is inexpressible as a linear descriptor chain"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: fan-out graph is inexpressible as a linear rfc8693 chain"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0071.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0072",
+      "class": "clean",
+      "expected": [],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: fan-out graph is inexpressible as a linear descriptor chain"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: fan-out graph is inexpressible as a linear rfc8693 chain"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0072.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0079",
+      "class": "clean",
+      "expected": [],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0079.json"
+        },
+        "rfc8693": {
+          "expressible": true,
+          "path": "rfc8693/case-0079.json"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0079.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0080",
+      "class": "clean",
+      "expected": [],
+      "formats": {
+        "descriptor": {
+          "expressible": true,
+          "path": "descriptor/case-0080.json"
+        },
+        "rfc8693": {
+          "expressible": true,
+          "path": "rfc8693/case-0080.json"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0080.json"
+        }
+      }
+    },
+    {
+      "case_id": "case-0087",
+      "class": "clean",
+      "expected": [],
+      "formats": {
+        "descriptor": {
+          "expressible": false,
+          "reason": "descriptor: fan-out graph is inexpressible as a linear descriptor chain"
+        },
+        "rfc8693": {
+          "expressible": false,
+          "reason": "rfc8693: fan-out graph is inexpressible as a linear rfc8693 chain"
+        },
+        "ucan": {
+          "expressible": true,
+          "path": "ucan/case-0087.json"
+        }
+      }
+    }
+  ],
+  "count": 24,
+  "counts": {
+    "descriptor": {
+      "expressible": 11,
+      "inexpressible": 13
+    },
+    "rfc8693": {
+      "expressible": 8,
+      "inexpressible": 16
+    },
+    "ucan": {
+      "expressible": 13,
+      "inexpressible": 11
+    }
+  },
+  "formats": [
+    "ucan",
+    "rfc8693",
+    "descriptor"
+  ],
+  "selected_case_ids": [
+    "case-0001",
+    "case-0002",
+    "case-0009",
+    "case-0010",
+    "case-0015",
+    "case-0016",
+    "case-0021",
+    "case-0022",
+    "case-0027",
+    "case-0028",
+    "case-0035",
+    "case-0036",
+    "case-0043",
+    "case-0044",
+    "case-0049",
+    "case-0053",
+    "case-0054",
+    "case-0063",
+    "case-0064",
+    "case-0071",
+    "case-0072",
+    "case-0079",
+    "case-0080",
+    "case-0087"
+  ]
+}

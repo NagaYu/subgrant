@@ -1,0 +1,20 @@
+{
+  "act": {
+    "act": {
+      "act": {
+        "act": null,
+        "scope": "cache.read data.write",
+        "sub": "n4"
+      },
+      "scope": "cache.read data.write",
+      "sub": "n3"
+    },
+    "scope": "cache.read data.write",
+    "sub": "n2"
+  },
+  "exp": 1782777600,
+  "iat": 1767225600,
+  "iss": "n0",
+  "scope": "cache.read data.write",
+  "sub": "n1"
+}

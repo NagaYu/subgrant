@@ -1,0 +1,78 @@
+{
+  "chain": [
+    {
+      "att": [
+        {
+          "can": "index.update",
+          "with": "files/reports/*"
+        },
+        {
+          "can": "report.generate",
+          "with": "files/reports/*"
+        }
+      ],
+      "aud": "n1",
+      "exp": 1782777600,
+      "iss": "n0",
+      "nbf": 1767225600,
+      "prf": []
+    },
+    {
+      "att": [
+        {
+          "can": "index.update",
+          "with": "files/reports/*"
+        },
+        {
+          "can": "report.generate",
+          "with": "files/reports/*"
+        }
+      ],
+      "aud": "n2",
+      "exp": 1781913600,
+      "iss": "n1",
+      "nbf": 1767225600,
+      "prf": [
+        0
+      ]
+    },
+    {
+      "att": [
+        {
+          "can": "index.update",
+          "with": "files/reports/*"
+        },
+        {
+          "can": "report.generate",
+          "with": "files/reports/*"
+        }
+      ],
+      "aud": "n3",
+      "exp": 1781913600,
+      "iss": "n1",
+      "nbf": 1767225600,
+      "prf": [
+        0
+      ]
+    },
+    {
+      "att": [
+        {
+          "can": "index.update",
+          "with": "files/reports/*"
+        },
+        {
+          "can": "report.generate",
+          "with": "files/reports/*"
+        }
+      ],
+      "aud": "n4",
+      "exp": 1781049600,
+      "iss": "n2",
+      "nbf": 1767225600,
+      "prf": [
+        1
+      ]
+    }
+  ]
+}

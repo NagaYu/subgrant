@@ -1,0 +1,340 @@
+{
+  "b0": {
+    "clean_fp_cases": 0,
+    "clean_fp_findings": 0,
+    "clean_total": 68,
+    "d8_detected": 0,
+    "d8_total": 4,
+    "extras": 0,
+    "misses": [
+      [
+        "case-0009",
+        {
+          "class": "D2",
+          "edge": "e5"
+        }
+      ],
+      [
+        "case-0010",
+        {
+          "class": "D2",
+          "edge": "e6"
+        }
+      ],
+      [
+        "case-0012",
+        {
+          "class": "D2",
+          "edge": "e2"
+        }
+      ],
+      [
+        "case-0013",
+        {
+          "class": "D2",
+          "edge": "e3"
+        }
+      ],
+      [
+        "case-0014",
+        {
+          "class": "D2",
+          "edge": "e4"
+        }
+      ],
+      [
+        "case-0027",
+        {
+          "class": "D5",
+          "edge": "e1"
+        }
+      ],
+      [
+        "case-0028",
+        {
+          "class": "D5",
+          "edge": "e2"
+        }
+      ],
+      [
+        "case-0029",
+        {
+          "class": "D5",
+          "edge": "e1"
+        }
+      ],
+      [
+        "case-0030",
+        {
+          "class": "D5",
+          "edge": "e2"
+        }
+      ],
+      [
+        "case-0031",
+        {
+          "class": "D5",
+          "edge": "e1"
+        }
+      ],
+      [
+        "case-0032",
+        {
+          "class": "D5",
+          "edge": "e2"
+        }
+      ],
+      [
+        "case-0033",
+        {
+          "class": "D5",
+          "edge": "e1"
+        }
+      ],
+      [
+        "case-0034",
+        {
+          "class": "D5",
+          "edge": "e2"
+        }
+      ],
+      [
+        "case-0043",
+        {
+          "class": "D7",
+          "edge": "e2"
+        }
+      ],
+      [
+        "case-0044",
+        {
+          "class": "D7",
+          "edge": "e3"
+        }
+      ],
+      [
+        "case-0045",
+        {
+          "class": "D7",
+          "edge": "e2"
+        }
+      ],
+      [
+        "case-0046",
+        {
+          "class": "D7",
+          "edge": "e3"
+        }
+      ],
+      [
+        "case-0047",
+        {
+          "class": "D7",
+          "edge": "e2"
+        }
+      ],
+      [
+        "case-0048",
+        {
+          "class": "D7",
+          "edge": "e3"
+        }
+      ]
+    ],
+    "planted_detected": {
+      "D1": 8,
+      "D2": 1,
+      "D3": 6,
+      "D4": 6,
+      "D5": 0,
+      "D6": 8,
+      "D7": 0
+    },
+    "planted_total": {
+      "D1": 8,
+      "D2": 6,
+      "D3": 6,
+      "D4": 6,
+      "D5": 8,
+      "D6": 8,
+      "D7": 6
+    },
+    "recall": {
+      "D1": 1.0,
+      "D2": 0.16666666666666666,
+      "D3": 1.0,
+      "D4": 1.0,
+      "D5": 0.0,
+      "D6": 1.0,
+      "D7": 0.0
+    }
+  },
+  "b1_attenu": [
+    {
+      "agree": false,
+      "attenu": "reject",
+      "attenu_reason": "signature_invalid",
+      "subgrant_findings": [],
+      "vector": "reject_bad_signature.json"
+    },
+    {
+      "agree": true,
+      "attenu": "reject",
+      "attenu_reason": "depth_invalid",
+      "subgrant_findings": [
+        [
+          "D2",
+          "e3"
+        ]
+      ],
+      "vector": "reject_depth_exceeded.json"
+    },
+    {
+      "agree": true,
+      "attenu": "reject",
+      "attenu_reason": "expired",
+      "subgrant_findings": [
+        [
+          "D4",
+          "e3"
+        ]
+      ],
+      "vector": "reject_nonmonotonic_exp.json"
+    },
+    {
+      "agree": true,
+      "attenu": "reject",
+      "attenu_reason": "not_narrower",
+      "subgrant_findings": [
+        [
+          "D1",
+          "e3"
+        ]
+      ],
+      "vector": "reject_widened_scope.json"
+    },
+    {
+      "agree": true,
+      "attenu": "accept",
+      "attenu_reason": null,
+      "subgrant_findings": [],
+      "vector": "valid_chain.json"
+    }
+  ],
+  "b2": {
+    "clean_fp": 0,
+    "per_class_total": {
+      "D1": 1,
+      "D4": 2,
+      "D7": 1
+    },
+    "recall": {
+      "D1": 1.0,
+      "D4": 0.5,
+      "D7": 0.0
+    },
+    "scored": [
+      [
+        "case-0002",
+        "D1",
+        true
+      ],
+      [
+        "case-0021",
+        "D4",
+        true
+      ],
+      [
+        "case-0022",
+        "D4",
+        false
+      ],
+      [
+        "case-0043",
+        "D7",
+        false
+      ],
+      [
+        "case-0053",
+        "clean",
+        false
+      ],
+      [
+        "case-0054",
+        "clean",
+        false
+      ],
+      [
+        "case-0063",
+        "clean",
+        false
+      ],
+      [
+        "case-0064",
+        "clean",
+        false
+      ],
+      [
+        "case-0071",
+        "clean",
+        false
+      ],
+      [
+        "case-0072",
+        "clean",
+        false
+      ],
+      [
+        "case-0079",
+        "clean",
+        false
+      ],
+      [
+        "case-0080",
+        "clean",
+        false
+      ],
+      [
+        "case-0087",
+        "clean",
+        false
+      ]
+    ]
+  },
+  "subgrant": {
+    "clean_fp_cases": 0,
+    "clean_fp_findings": 0,
+    "clean_total": 68,
+    "d8_detected": 4,
+    "d8_total": 4,
+    "extras": 0,
+    "misses": [],
+    "planted_detected": {
+      "D1": 8,
+      "D2": 6,
+      "D3": 6,
+      "D4": 6,
+      "D5": 8,
+      "D6": 8,
+      "D7": 6
+    },
+    "planted_total": {
+      "D1": 8,
+      "D2": 6,
+      "D3": 6,
+      "D4": 6,
+      "D5": 8,
+      "D6": 8,
+      "D7": 6
+    },
+    "recall": {
+      "D1": 1.0,
+      "D2": 1.0,
+      "D3": 1.0,
+      "D4": 1.0,
+      "D5": 1.0,
+      "D6": 1.0,
+      "D7": 1.0
+    }
+  }
+}

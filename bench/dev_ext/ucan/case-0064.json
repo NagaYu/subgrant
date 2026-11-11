@@ -1,0 +1,78 @@
+{
+  "chain": [
+    {
+      "att": [
+        {
+          "can": "cache.read",
+          "with": "kv/cache/*"
+        },
+        {
+          "can": "data.write",
+          "with": "kv/cache/*"
+        }
+      ],
+      "aud": "n1",
+      "exp": 1782777600,
+      "iss": "n0",
+      "nbf": 1767225600,
+      "prf": []
+    },
+    {
+      "att": [
+        {
+          "can": "cache.read",
+          "with": "kv/cache/*"
+        },
+        {
+          "can": "data.write",
+          "with": "kv/cache/*"
+        }
+      ],
+      "aud": "n2",
+      "exp": 1782777600,
+      "iss": "n1",
+      "nbf": 1767225600,
+      "prf": [
+        0
+      ]
+    },
+    {
+      "att": [
+        {
+          "can": "cache.read",
+          "with": "kv/cache/*"
+        },
+        {
+          "can": "data.write",
+          "with": "kv/cache/*"
+        }
+      ],
+      "aud": "n3",
+      "exp": 1782777600,
+      "iss": "n2",
+      "nbf": 1767225600,
+      "prf": [
+        1
+      ]
+    },
+    {
+      "att": [
+        {
+          "can": "cache.read",
+          "with": "kv/cache/*"
+        },
+        {
+          "can": "data.write",
+          "with": "kv/cache/*"
+        }
+      ],
+      "aud": "n4",
+      "exp": 1782777600,
+      "iss": "n3",
+      "nbf": 1767225600,
+      "prf": [
+        2
+      ]
+    }
+  ]
+}

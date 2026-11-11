@@ -1,0 +1,106 @@
+{
+  "child_credentials": "scoped",
+  "framework": "devext",
+  "generations": [
+    {
+      "actions": [
+        "cache.read",
+        "data.write"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "tokens"
+        }
+      ],
+      "node": "g0",
+      "purposes": [
+        "read",
+        "write"
+      ],
+      "resources": [
+        "kv/cache/*"
+      ],
+      "tools": [
+        "tool.index",
+        "tool.vector"
+      ]
+    },
+    {
+      "actions": [
+        "cache.read",
+        "data.write"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "tokens"
+        }
+      ],
+      "node": "g1",
+      "purposes": [
+        "read",
+        "write"
+      ],
+      "resources": [
+        "kv/cache/*"
+      ],
+      "tools": [
+        "tool.index",
+        "tool.vector"
+      ]
+    },
+    {
+      "actions": [
+        "cache.read",
+        "data.write"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "tokens"
+        }
+      ],
+      "node": "g2",
+      "purposes": [
+        "read",
+        "write"
+      ],
+      "resources": [
+        "kv/cache/*"
+      ],
+      "tools": [
+        "tool.index",
+        "tool.vector"
+      ]
+    },
+    {
+      "actions": [
+        "cache.read",
+        "data.write"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "tokens"
+        }
+      ],
+      "node": "g3",
+      "purposes": [
+        "read",
+        "write"
+      ],
+      "resources": [
+        "kv/cache/*"
+      ],
+      "tools": [
+        "tool.index",
+        "tool.vector"
+      ]
+    }
+  ],
+  "handoff_evidence": "logged attestation",
+  "scenario": "dev_ext round-trip",
+  "source_refs": [],
+  "version": "0"
+}

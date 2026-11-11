@@ -1,0 +1,148 @@
+{
+  "child_credentials": "scoped",
+  "framework": "devext",
+  "generations": [
+    {
+      "actions": [
+        "index.update",
+        "report.generate"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "rows_scanned"
+        }
+      ],
+      "node": "g0",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "files/reports/*"
+      ],
+      "tools": [
+        "tool.fetch",
+        "tool.summarize"
+      ]
+    },
+    {
+      "actions": [
+        "index.update",
+        "report.generate"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "rows_scanned"
+        }
+      ],
+      "node": "g1",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "files/reports/*"
+      ],
+      "tools": [
+        "tool.fetch",
+        "tool.summarize"
+      ]
+    },
+    {
+      "actions": [
+        "index.update",
+        "report.generate"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "rows_scanned"
+        }
+      ],
+      "node": "g2",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "files/reports/*"
+      ],
+      "tools": [
+        "tool.fetch",
+        "tool.summarize"
+      ]
+    },
+    {
+      "actions": [
+        "index.update",
+        "report.generate"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "rows_scanned"
+        }
+      ],
+      "node": "g3",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "files/reports/*"
+      ],
+      "tools": [
+        "tool.fetch",
+        "tool.summarize"
+      ]
+    },
+    {
+      "actions": [
+        "index.update",
+        "report.generate"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "rows_scanned"
+        }
+      ],
+      "node": "g4",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "files/reports/*"
+      ],
+      "tools": [
+        "tool.fetch",
+        "tool.summarize"
+      ]
+    },
+    {
+      "actions": [
+        "index.update",
+        "report.generate"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "rows_scanned"
+        }
+      ],
+      "node": "g5",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "files/reports/*"
+      ],
+      "tools": [
+        "tool.fetch",
+        "tool.summarize"
+      ]
+    }
+  ],
+  "handoff_evidence": "logged attestation",
+  "scenario": "dev_ext round-trip",
+  "source_refs": [],
+  "version": "0"
+}

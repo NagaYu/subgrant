@@ -1,0 +1,40 @@
+{
+  "chain": [
+    {
+      "att": [
+        {
+          "can": "data.read",
+          "with": "db/project-x/*"
+        },
+        {
+          "can": "report.generate",
+          "with": "db/project-x/*"
+        }
+      ],
+      "aud": "n1",
+      "exp": 1782777600,
+      "iss": "n0",
+      "nbf": 1767225600,
+      "prf": []
+    },
+    {
+      "att": [
+        {
+          "can": "data.read",
+          "with": "db/project-x/*"
+        },
+        {
+          "can": "report.generate",
+          "with": "db/project-x/*"
+        }
+      ],
+      "aud": "n2",
+      "exp": 1781913600,
+      "iss": "n1",
+      "nbf": 1767225600,
+      "prf": [
+        0
+      ]
+    }
+  ]
+}

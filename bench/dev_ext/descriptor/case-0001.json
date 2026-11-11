@@ -1,0 +1,57 @@
+{
+  "child_credentials": "scoped",
+  "framework": "devext",
+  "generations": [
+    {
+      "actions": [
+        "data.read",
+        "report.generate"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "spend_usd"
+        }
+      ],
+      "node": "g0",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "db/project-x/*"
+      ],
+      "tools": [
+        "tool.fetch",
+        "tool.search"
+      ]
+    },
+    {
+      "actions": [
+        "data.read",
+        "report.generate"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "spend_usd"
+        }
+      ],
+      "node": "g1",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "db/project-x/*"
+      ],
+      "tools": [
+        "tool.fetch",
+        "tool.read",
+        "tool.search"
+      ]
+    }
+  ],
+  "handoff_evidence": "logged attestation",
+  "scenario": "dev_ext round-trip",
+  "source_refs": [],
+  "version": "0"
+}

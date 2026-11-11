@@ -1,0 +1,40 @@
+{
+  "chain": [
+    {
+      "att": [
+        {
+          "can": "data.read",
+          "with": "logs/app/*"
+        },
+        {
+          "can": "index.update",
+          "with": "logs/app/*"
+        }
+      ],
+      "aud": "n1",
+      "exp": 1782777600,
+      "iss": "n0",
+      "nbf": 1767225600,
+      "prf": []
+    },
+    {
+      "att": [
+        {
+          "can": "data.read",
+          "with": "logs/app/*"
+        },
+        {
+          "can": "index.update",
+          "with": "logs/app/*"
+        }
+      ],
+      "aud": "n2",
+      "exp": 1782777600,
+      "iss": "n1",
+      "nbf": 1767225600,
+      "prf": [
+        0
+      ]
+    }
+  ]
+}

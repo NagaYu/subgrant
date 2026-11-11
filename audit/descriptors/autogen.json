@@ -1,0 +1,86 @@
+{
+  "child_credentials": "scoped",
+  "framework": "autogen",
+  "generations": [
+    {
+      "actions": [
+        "communicate.send",
+        "data.read",
+        "data.write",
+        "funds.transfer"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "spend_usd"
+        }
+      ],
+      "node": "orchestrator",
+      "purposes": [
+        "communicate",
+        "read",
+        "transact",
+        "write"
+      ],
+      "resources": [
+        "db/project-x/*"
+      ],
+      "tools": [
+        "pay",
+        "read_db",
+        "search",
+        "send_email",
+        "write_db"
+      ]
+    },
+    {
+      "actions": [
+        "data.read"
+      ],
+      "caps": [
+        {
+          "limit": 25,
+          "name": "spend_usd"
+        }
+      ],
+      "node": "research-subagent",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "db/project-x/*"
+      ],
+      "tools": [
+        "read_db",
+        "search"
+      ]
+    },
+    {
+      "actions": [
+        "data.read"
+      ],
+      "caps": [
+        {
+          "limit": 10,
+          "name": "spend_usd"
+        }
+      ],
+      "node": "formatting-agent",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "db/project-x/*"
+      ],
+      "tools": [
+        "read_db"
+      ]
+    }
+  ],
+  "handoff_evidence": "none",
+  "scenario": "orchestrator delegates research to a sub-agent, which delegates formatting to a third agent",
+  "source_refs": [
+    "https://microsoft.github.io/autogen/0.7.3/user-guide/agentchat-user-guide/tutorial/agents.html"
+  ],
+  "version": "autogen-agentchat 0.7.5"
+}

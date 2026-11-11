@@ -1,0 +1,16 @@
+{
+  "act": {
+    "act": {
+      "act": null,
+      "scope": "data.list data.write",
+      "sub": "n3"
+    },
+    "scope": "data.list data.write",
+    "sub": "n2"
+  },
+  "exp": 1782777600,
+  "iat": 1767225600,
+  "iss": "n0",
+  "scope": "data.list data.write",
+  "sub": "n1"
+}

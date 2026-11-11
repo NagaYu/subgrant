@@ -1,0 +1,106 @@
+{
+  "child_credentials": "inherit",
+  "framework": "langgraph-deepagents",
+  "generations": [
+    {
+      "actions": [
+        "communicate.send",
+        "data.read",
+        "data.write",
+        "funds.transfer"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "spend_usd"
+        }
+      ],
+      "node": "orchestrator",
+      "purposes": [
+        "communicate",
+        "read",
+        "transact",
+        "write"
+      ],
+      "resources": [
+        "db/project-x/*"
+      ],
+      "tools": [
+        "pay",
+        "read_db",
+        "search",
+        "send_email",
+        "write_db"
+      ]
+    },
+    {
+      "actions": [
+        "communicate.send",
+        "data.read",
+        "data.write",
+        "funds.transfer"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "spend_usd"
+        }
+      ],
+      "node": "research-subagent",
+      "purposes": [
+        "communicate",
+        "read",
+        "transact",
+        "write"
+      ],
+      "resources": [
+        "db/project-x/*"
+      ],
+      "tools": [
+        "pay",
+        "read_db",
+        "search",
+        "send_email",
+        "write_db"
+      ]
+    },
+    {
+      "actions": [
+        "communicate.send",
+        "data.read",
+        "data.write",
+        "funds.transfer"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "spend_usd"
+        }
+      ],
+      "node": "formatting-agent",
+      "purposes": [
+        "communicate",
+        "read",
+        "transact",
+        "write"
+      ],
+      "resources": [
+        "db/project-x/*"
+      ],
+      "tools": [
+        "pay",
+        "read_db",
+        "search",
+        "send_email",
+        "write_db"
+      ]
+    }
+  ],
+  "handoff_evidence": "none",
+  "scenario": "orchestrator delegates research to a sub-agent, which delegates formatting to a third agent",
+  "source_refs": [
+    "https://docs.langchain.com/oss/python/deepagents/subagents",
+    "https://docs.langchain.com/oss/python/deepagents/permissions.md"
+  ],
+  "version": "deepagents 0.7.6 / langchain 1.3.15"
+}

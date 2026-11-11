@@ -1,0 +1,43 @@
+{
+  "clean_fp_cases": 0,
+  "clean_fp_findings": 0,
+  "clean_fp_rate": 0.0,
+  "clean_total": 68,
+  "d8_detected": 4,
+  "d8_total": 4,
+  "detail": {
+    "clean_fp": [],
+    "extras": [],
+    "missed": []
+  },
+  "extra_findings": 0,
+  "gate1": true,
+  "gate1_recall_ok": true,
+  "planted_detected": {
+    "D1": 8,
+    "D2": 6,
+    "D3": 6,
+    "D4": 6,
+    "D5": 8,
+    "D6": 8,
+    "D7": 6
+  },
+  "planted_total": {
+    "D1": 8,
+    "D2": 6,
+    "D3": 6,
+    "D4": 6,
+    "D5": 8,
+    "D6": 8,
+    "D7": 6
+  },
+  "recall": {
+    "D1": 1.0,
+    "D2": 1.0,
+    "D3": 1.0,
+    "D4": 1.0,
+    "D5": 1.0,
+    "D6": 1.0,
+    "D7": 1.0
+  }
+}

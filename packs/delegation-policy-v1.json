@@ -1,0 +1,15 @@
+{
+  "pack": "delegation-policy",
+  "version": "1.0.0",
+  "max_depth": 6,
+  "protected_actions": [
+    "funds.transfer",
+    "data.delete",
+    "iam.grant",
+    "iam.modify",
+    "code.push_protected",
+    "pii.export",
+    "secret.read",
+    "infra.destroy"
+  ]
+}

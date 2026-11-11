@@ -1,0 +1,28 @@
+{
+  "act": {
+    "act": {
+      "act": {
+        "act": {
+          "act": {
+            "act": null,
+            "scope": "index.update report.generate",
+            "sub": "n6"
+          },
+          "scope": "index.update report.generate",
+          "sub": "n5"
+        },
+        "scope": "index.update report.generate",
+        "sub": "n4"
+      },
+      "scope": "index.update report.generate",
+      "sub": "n3"
+    },
+    "scope": "index.update report.generate",
+    "sub": "n2"
+  },
+  "exp": 1782777600,
+  "iat": 1767225600,
+  "iss": "n0",
+  "scope": "index.update report.generate",
+  "sub": "n1"
+}

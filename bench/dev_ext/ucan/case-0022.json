@@ -1,0 +1,40 @@
+{
+  "chain": [
+    {
+      "att": [
+        {
+          "can": "cache.read",
+          "with": "kv/cache/*"
+        },
+        {
+          "can": "data.write",
+          "with": "kv/cache/*"
+        }
+      ],
+      "aud": "n1",
+      "exp": 1782777600,
+      "iss": "n0",
+      "nbf": 1767225600,
+      "prf": []
+    },
+    {
+      "att": [
+        {
+          "can": "cache.read",
+          "with": "kv/cache/*"
+        },
+        {
+          "can": "data.write",
+          "with": "kv/cache/*"
+        }
+      ],
+      "aud": "n2",
+      "exp": 1782777600,
+      "iss": "n1",
+      "nbf": 1767139200,
+      "prf": [
+        0
+      ]
+    }
+  ]
+}

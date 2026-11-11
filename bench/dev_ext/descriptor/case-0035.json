@@ -1,0 +1,56 @@
+{
+  "child_credentials": "scoped",
+  "framework": "devext",
+  "generations": [
+    {
+      "actions": [
+        "data.read",
+        "index.update"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "emails_sent"
+        }
+      ],
+      "node": "g0",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "logs/app/*"
+      ],
+      "tools": [
+        "tool.search",
+        "tool.summarize"
+      ]
+    },
+    {
+      "actions": [
+        "data.read",
+        "index.update"
+      ],
+      "caps": [
+        {
+          "limit": 150,
+          "name": "emails_sent"
+        }
+      ],
+      "node": "g1",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "logs/app/*"
+      ],
+      "tools": [
+        "tool.search",
+        "tool.summarize"
+      ]
+    }
+  ],
+  "handoff_evidence": "logged attestation",
+  "scenario": "dev_ext round-trip",
+  "source_refs": [],
+  "version": "0"
+}

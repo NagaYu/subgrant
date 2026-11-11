@@ -1,0 +1,56 @@
+{
+  "child_credentials": "scoped",
+  "framework": "devext",
+  "generations": [
+    {
+      "actions": [
+        "data.read",
+        "index.update"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "rows_scanned"
+        }
+      ],
+      "node": "g0",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "logs/app/*"
+      ],
+      "tools": [
+        "tool.search",
+        "tool.summarize"
+      ]
+    },
+    {
+      "actions": [
+        "data.read",
+        "index.update"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "rows_scanned"
+        }
+      ],
+      "node": "g1",
+      "purposes": [
+        "read"
+      ],
+      "resources": [
+        "logs/app/*"
+      ],
+      "tools": [
+        "tool.search",
+        "tool.summarize"
+      ]
+    }
+  ],
+  "handoff_evidence": "logged attestation",
+  "scenario": "dev_ext round-trip",
+  "source_refs": [],
+  "version": "0"
+}

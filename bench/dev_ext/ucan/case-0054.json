@@ -1,0 +1,59 @@
+{
+  "chain": [
+    {
+      "att": [
+        {
+          "can": "data.list",
+          "with": "db/analytics/*"
+        },
+        {
+          "can": "data.write",
+          "with": "db/analytics/*"
+        }
+      ],
+      "aud": "n1",
+      "exp": 1782777600,
+      "iss": "n0",
+      "nbf": 1767225600,
+      "prf": []
+    },
+    {
+      "att": [
+        {
+          "can": "data.list",
+          "with": "db/analytics/*"
+        },
+        {
+          "can": "data.write",
+          "with": "db/analytics/*"
+        }
+      ],
+      "aud": "n2",
+      "exp": 1782777600,
+      "iss": "n1",
+      "nbf": 1767225600,
+      "prf": [
+        0
+      ]
+    },
+    {
+      "att": [
+        {
+          "can": "data.list",
+          "with": "db/analytics/*"
+        },
+        {
+          "can": "data.write",
+          "with": "db/analytics/*"
+        }
+      ],
+      "aud": "n3",
+      "exp": 1782777600,
+      "iss": "n2",
+      "nbf": 1767225600,
+      "prf": [
+        1
+      ]
+    }
+  ]
+}

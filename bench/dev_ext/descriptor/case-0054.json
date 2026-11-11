@@ -1,0 +1,82 @@
+{
+  "child_credentials": "scoped",
+  "framework": "devext",
+  "generations": [
+    {
+      "actions": [
+        "data.list",
+        "data.write"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "tokens"
+        }
+      ],
+      "node": "g0",
+      "purposes": [
+        "read",
+        "write"
+      ],
+      "resources": [
+        "db/analytics/*"
+      ],
+      "tools": [
+        "tool.read",
+        "tool.vector"
+      ]
+    },
+    {
+      "actions": [
+        "data.list",
+        "data.write"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "tokens"
+        }
+      ],
+      "node": "g1",
+      "purposes": [
+        "read",
+        "write"
+      ],
+      "resources": [
+        "db/analytics/*"
+      ],
+      "tools": [
+        "tool.read",
+        "tool.vector"
+      ]
+    },
+    {
+      "actions": [
+        "data.list",
+        "data.write"
+      ],
+      "caps": [
+        {
+          "limit": 100,
+          "name": "tokens"
+        }
+      ],
+      "node": "g2",
+      "purposes": [
+        "read",
+        "write"
+      ],
+      "resources": [
+        "db/analytics/*"
+      ],
+      "tools": [
+        "tool.read",
+        "tool.vector"
+      ]
+    }
+  ],
+  "handoff_evidence": "logged attestation",
+  "scenario": "dev_ext round-trip",
+  "source_refs": [],
+  "version": "0"
+}
