@@ -1,0 +1,98 @@
+{
+  "schema": "dgraph/1",
+  "nodes": [
+    {
+      "id": "n0",
+      "kind": "human",
+      "trust_tier": "T0"
+    },
+    {
+      "id": "n1",
+      "kind": "agent",
+      "trust_tier": "T1"
+    },
+    {
+      "id": "n2",
+      "kind": "agent",
+      "trust_tier": "T1"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "parent_edge": null,
+      "issuer": "n0",
+      "holder": "n1",
+      "authority": {
+        "tools": [
+          "tool.search"
+        ],
+        "actions": [
+          "data.read"
+        ],
+        "resources": [
+          "db/project-x/*"
+        ],
+        "data_classes": [
+          "internal"
+        ]
+      },
+      "caveats": {
+        "issued_at": "2026-01-01T00:00:00Z",
+        "expires_at": "2026-06-01T00:00:00Z",
+        "redelegation": true,
+        "caps": [
+          {
+            "name": "spend_usd",
+            "limit": 9007199254740992
+          }
+        ],
+        "purposes": [
+          "read"
+        ]
+      },
+      "evidence": {
+        "kind": "attestation",
+        "ref": "att:e1"
+      }
+    },
+    {
+      "id": "e2",
+      "parent_edge": "e1",
+      "issuer": "n1",
+      "holder": "n2",
+      "authority": {
+        "tools": [
+          "tool.search"
+        ],
+        "actions": [
+          "data.read"
+        ],
+        "resources": [
+          "db/project-x/*"
+        ],
+        "data_classes": [
+          "internal"
+        ]
+      },
+      "caveats": {
+        "issued_at": "2026-01-01T00:00:00Z",
+        "expires_at": "2026-06-01T00:00:00Z",
+        "redelegation": true,
+        "caps": [
+          {
+            "name": "spend_usd",
+            "limit": 9007199254740993
+          }
+        ],
+        "purposes": [
+          "read"
+        ]
+      },
+      "evidence": {
+        "kind": "attestation",
+        "ref": "att:e2"
+      }
+    }
+  ]
+}

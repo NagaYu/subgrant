@@ -8,7 +8,9 @@ the parent-relative checks (D1, D3, D4, D6).
 from __future__ import annotations
 
 import json
+import math
 import os
+from fractions import Fraction
 from typing import Any
 
 from .graph import Graph, Edge
@@ -88,11 +90,50 @@ def _d6_weakens(e: Edge, p: Edge) -> bool:
     for name, plimit in p.caps.items():
         if name not in e.caps:
             return True  # cap present in parent, absent in child
-        if e.caps[name] > plimit:
-            return True  # same-name cap raised
+        # A child cap is allowed only when it is *provably* <= the parent's.
+        # The provably-<= phrasing (not (child <= parent)) is False-safe for
+        # NaN: any comparison with NaN is False, so a NaN child limit OR a NaN
+        # parent limit makes the child not-provably-<=, which fires D6. Integer
+        # limits compare exactly (no float64 rounding), so 2**53 + 1 > 2**53.
+        if not (e.caps[name] <= plimit):
+            return True  # same-name cap not provably within the parent's
     if not e.purposes <= p.purposes:
         return True
     return False
+
+
+def _cap_sum(values: Any) -> int | Fraction | float:
+    """Exact sum of D5 cap addends, with non-finite poisoning.
+
+    Finite ints and floats are summed exactly (via :class:`~fractions.Fraction`,
+    which captures a float's exact binary value), so an integer sibling sum is
+    exact — no float64 rounding can make it appear within the parent's limit.
+    Any NaN addend, or a mix of +Infinity and -Infinity, poisons the total to
+    NaN; a lone +/-Infinity yields that infinity. The returned value compares
+    with ``<=`` against the parent limit so that a poisoned total is never
+    provably within it (NaN/inf comparisons are False), firing D5.
+    """
+    total = Fraction(0)
+    pos_inf = neg_inf = has_nan = False
+    for v in values:
+        if isinstance(v, float):
+            if math.isnan(v):
+                has_nan = True
+                continue
+            if math.isinf(v):
+                if v > 0:
+                    pos_inf = True
+                else:
+                    neg_inf = True
+                continue
+        total += Fraction(v)  # exact for int and finite float
+    if has_nan or (pos_inf and neg_inf):
+        return float("nan")
+    if pos_inf:
+        return float("inf")
+    if neg_inf:
+        return float("-inf")
+    return total
 
 
 def run_checks(graph: Graph, pack: dict[str, Any] | None = None) -> list[Finding]:
@@ -141,11 +182,11 @@ def run_checks(graph: Graph, pack: dict[str, Any] | None = None) -> list[Finding
             continue  # a child already fails D1/D6; D5 does not fire
         fired = False
         for name, plimit in p.caps.items():
-            total = 0.0
-            for c in kids:
-                # Child omitting the cap consumes the parent's full limit.
-                total += c.caps.get(name, plimit)
-            if total > plimit:
+            # Child omitting the cap consumes the parent's full limit.
+            total = _cap_sum(c.caps.get(name, plimit) for c in kids)
+            # Fire unless the sibling sum is provably within the parent's limit
+            # (exact arithmetic; a NaN/inf-poisoned total is never provably <=).
+            if not (total <= plimit):
                 fired = True
                 break
         if fired:

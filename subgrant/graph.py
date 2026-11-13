@@ -180,7 +180,15 @@ class Edge:
 
         caps_raw = caveats.get("caps", [])
         _require(isinstance(caps_raw, list), f"{ctx}.caveats.caps: must be an array")
-        caps: dict[str, float] = {}
+        # Cap limits are preserved exactly as written in the document: a JSON
+        # integer stays a Python ``int`` (arbitrary precision), a JSON float
+        # stays a ``float``. We deliberately do NOT coerce to ``float`` — that
+        # rounding let an integer raise of 2**53 -> 2**53 + 1 collapse to an
+        # equal float64 and slip past D6 (see DECISIONS "cap numerics"). Any
+        # numeric value is accepted at load, NaN and +/-Infinity included; a
+        # non-finite or out-of-order limit is a *weakening* reported by D6/D5,
+        # never an input error.
+        caps: dict[str, int | float] = {}
         for cap in caps_raw:
             _require(isinstance(cap, dict), f"{ctx}.caveats.caps: each cap must be an object")
             name = cap.get("name")
@@ -191,7 +199,7 @@ class Edge:
                 f"{ctx}.caveats.caps[{name}]: 'limit' must be a number",
             )
             _require(name not in caps, f"{ctx}.caveats.caps: duplicate cap name {name!r}")
-            caps[name] = float(limit)
+            caps[name] = limit
         self.caps = caps
 
         self.purposes = frozenset(

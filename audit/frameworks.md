@@ -51,6 +51,7 @@ it (so a child can even hold tools the parent lacks). Nothing checks child ⊆
 parent. No handoff token is recorded. Descriptor uses `child_credentials:
 inherit`; SubGrant reports D7 (e3: `funds.transfer` reaches the third agent via
 a non-root issuer) and D8 on every edge.
+Maintainer-confirmed intended behaviour (ccurme, LangChain, 2026-11-11; issue #7679 closed as not planned — "This is intended behavior.")
 Sources: docs.langchain.com/oss/python/deepagents/subagents, .../permissions.md.
 
 **OpenAI Agents SDK.** Delegation is via `handoffs` (control transfer) or

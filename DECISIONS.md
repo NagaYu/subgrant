@@ -177,41 +177,44 @@ invented silently.
 D1–D7 are `error`; D8 is `note` (presence-only, informational). Rules D1–D8 are
 always declared in the run even when there are no results.
 
----
+## D-021 · Cap numerics — exact comparison, NaN/Infinity as findings
+Cap limits (`caveats.caps[].limit`) are compared **exactly as written in the
+document**, with no `float64` rounding. At load (`subgrant/graph.py`) the JSON
+number is preserved: a JSON integer stays a Python `int` (arbitrary precision),
+a JSON float stays a `float`. The earlier `float(limit)` coercion was the single
+root cause of two D6 evasions found by the adversarial fuzz audit
+(`reports/fuzz-audit.md`): it rounded `2**53 + 1` down to `2**53`, so an integer
+cap raise of exactly 1 compared equal, and it provided no defense against `NaN`.
 
-# Phase 3 decisions (D-021 onward) — public export
+D6 and D5 now use a **provably-≤** test instead of strict `>`. A child cap is a
+weakening unless it is provably within the parent's: `not (child <= parent)`.
+Every comparison with `NaN` is `False`, so this phrasing is False-safe — a `NaN`
+child limit fires D6, and a `NaN` parent limit makes *any* child cap
+not-provably-≤, so D6 fires. `NaN` is therefore a **weakening, reported as a
+finding, never an input error**: a `NaN` cap loads cleanly (no `GraphError`, no
+exit 2). The D5 sibling sum is computed in **exact arithmetic**
+(`fractions.Fraction`, which captures a finite float's exact binary value), so
+an integer sibling sum is exact and cannot appear within the parent's limit
+through rounding; a `NaN` addend (or a +∞/−∞ mix) poisons the total to `NaN`,
+and a lone ±∞ yields that infinity, so a non-finite sibling sum is never
+provably within the limit and D5 fires.
 
-Phase 3 prepares the public evaluation export. The verifier, benches, and
-reports are frozen; these decisions concern only what the public export
-contains and how it is licensed and staged. No core semantics changed.
+Non-finite handling is thus: **+Infinity child fires D6** (not provably ≤ a
+finite parent); **−Infinity child is clean** (it narrows, `-inf <= finite`);
+finite float caps behave exactly as before; an equal restatement (including at
+exactly `2**53`) stays clean. Note that whenever a `NaN` would enter a D5 sum,
+the same `NaN` child already fails the per-edge D6 provably-≤ test, so the D5
+fan-out gate (fire only when every child individually passes D1/D6) defers to
+the direct D6 finding; the NaN-poisoning of the sum is a belt-and-suspenders
+property of the arithmetic, independently verified.
 
-## D-021 · The public export excludes the sealed holdout and `score_holdout.py`
-The sealed 120-case holdout never leaves the development repository: none of
-`bench/holdout/` (cases, generator, `PREDICTIONS.md`, `AUTHORING.md`, manifest,
-score) is copied in whole or in part under any name, and `bench/score_holdout.py`
-is excluded because its comparison logic is identical to the public
-`bench/score.py`. The public materials state only the aggregate facts — a sealed
-120-case holdout exists, it is not published, and GATE 2 passed on it
-(`reports/gate2.md`, `README.md` §2). Rationale: a holdout retains its evidential
-value only while it stays secret; publishing any part of it would forfeit the
-pre-registration guarantee.
-
-## D-022 · License is the portfolio's unified All-Rights-Reserved text
-The export carries the portfolio's standard `LICENSE`: copyright reserved, the
-Materials made public **solely for evaluation**, with no license to use, copy,
-modify, or create derivative works. Licensing or transfer inquiries go through
-the portfolio contact page; no email address appears anywhere in the repository.
-
-## D-023 · Hugging Face assets are staged locally, uploaded only at publication
-The future Hugging Face dataset (`NagaYu/subgrant-bench`, dev cases only) and
-Static Space demo are prepared under `hf-staging/`, which is listed in
-`.gitignore` and **not committed**. Nothing is uploaded by the preparation
-session; upload happens only at publication, after the owner's final
-confirmation of the exact texts and targets.
-
-## D-024 · Export corrections after independent audit
-Added `schema/dgraph-1.json` (byte-identical to the dev repo; it was missing
-from the export inventory) and corrected the case-0027 illustration in
-`reports/phase2.md` §4 to match the actual case (`api_calls=100`, four children
-at 30). Both changes are export-copy only; the dev repo is unchanged as the
-historical record.
+**Monotone-fix rationale (why a findings-fix, not an input-error).** GATE 2 was
+scored on the sealed holdout against the verifier's *findings* behavior as it
+stood at `bcbd286`/`f3e4e93` — where, for example, a +Infinity cap is a D6
+finding, not an input error. This fix is **monotone**: for every input, the
+fixed verifier's findings are a superset of the previous verifier's, and the
+only verdict changes are inside the two evasion families (`cap/nan`,
+`cap/bigint-plus-one`). It therefore keeps the published GATE 2 statement true
+by construction, without reopening or re-scoring the sealed holdout. Converting
+caps to input errors (exit 2) would instead *remove* findings and change the
+load/verdict contract, breaking that guarantee — so it was rejected.
